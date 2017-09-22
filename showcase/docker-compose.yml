@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+
+  elasticsearch:
+    build: elasticsearch/
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx512m -Xms512m"
+
+  es-head:
+    image: mobz/elasticsearch-head:5
+    ports:
+      - "9100:9100"
+
+  web:
+    build: .
+    command: ./run.sh
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - elasticsearch
