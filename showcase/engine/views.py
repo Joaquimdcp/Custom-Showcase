@@ -4,4 +4,4 @@ from django.shortcuts import render, render_to_response, redirect, get_object_or
 
 
 def index(request):
-    return render_to_response('index.html')
+    return render_to_response('thumbs.html', {'total': 5})
