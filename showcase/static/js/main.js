@@ -1,14 +1,14 @@
 
 jQuery(function($){
 
-var BRUSHED = window.BRUSHED || {};
+var scraf = window.scraf || {};
 
 /* ==================================================
    Mobile Navigation
 ================================================== */
 var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
 
-BRUSHED.mobileNav = function(){
+scraf.mobileNav = function(){
 	var windowWidth = $(window).width();
 	
 	if( windowWidth <= 979 ) {
@@ -24,7 +24,7 @@ BRUSHED.mobileNav = function(){
 	}
 }
 
-BRUSHED.listenerMenu = function(){
+scraf.listenerMenu = function(){
 	$('#mobile-nav').on('click', function(e){
 		$(this).toggleClass('open');
 		
@@ -47,7 +47,7 @@ BRUSHED.listenerMenu = function(){
    Slider Options
 ================================================== */
 
-BRUSHED.slider = function(){
+scraf.slider = function(){
 	$.supersized({
 		// Functionality
 		slideshow               :   1,			// Slideshow on/off
@@ -78,10 +78,10 @@ BRUSHED.slider = function(){
 		thumb_links				:	0,			// Individual thumb links for each slide
 		thumbnail_navigation    :   0,			// Thumbnail navigation
 		slides 					:  	[			// Slideshow Images
-											{image : '/static/img/slider-images/image01.jpg', title : '<div class="slide-content">Brushed</div>', thumb : '', url : ''},
-											{image : '/static/img/slider-images/image02.jpg', title : '<div class="slide-content">Brushed</div>', thumb : '', url : ''},
-											{image : '/static/img/slider-images/image03.jpg', title : '<div class="slide-content">Brushed</div>', thumb : '', url : ''},
-											{image : '/static/img/slider-images/image04.jpg', title : '<div class="slide-content">Brushed</div>', thumb : '', url : ''}  
+											{image : '/static/img/slider-images/image01.jpg', title : '<div class="slide-content">scraf</div>', thumb : '', url : ''},
+											{image : '/static/img/slider-images/image02.jpg', title : '<div class="slide-content">scraf</div>', thumb : '', url : ''},
+											{image : '/static/img/slider-images/image03.jpg', title : '<div class="slide-content">scraf</div>', thumb : '', url : ''},
+											{image : '/static/img/slider-images/image04.jpg', title : '<div class="slide-content">scraf</div>', thumb : '', url : ''}  
 									],
 									
 		// Theme Options			   
@@ -97,7 +97,7 @@ BRUSHED.slider = function(){
    Navigation Fix
 ================================================== */
 
-BRUSHED.nav = function(){
+scraf.nav = function(){
 	$('.sticky-nav').waypoint('sticky');
 }
 
@@ -106,7 +106,7 @@ BRUSHED.nav = function(){
    Filter Works
 ================================================== */
 
-BRUSHED.filter = function (){
+scraf.filter = function (){
 	if($('#projects').length > 0){		
 		var $container = $('#projects');
 		
@@ -159,7 +159,7 @@ BRUSHED.filter = function (){
    FancyBox
 ================================================== */
 
-BRUSHED.fancyBox = function(){
+scraf.fancyBox = function(){
 	if($('.fancybox').length > 0 || $('.fancybox-media').length > 0 || $('.fancybox-various').length > 0){
 		
 		$(".fancybox").fancybox({				
@@ -188,7 +188,7 @@ BRUSHED.fancyBox = function(){
    Contact Form
 ================================================== */
 
-BRUSHED.contactForm = function(){
+scraf.contactForm = function(){
 	$("#contact-submit").on('click',function() {
 		$contact_form = $('#contact-form');
 		
@@ -218,7 +218,7 @@ BRUSHED.contactForm = function(){
    Twitter Feed
 ================================================== */
 
-BRUSHED.tweetFeed = function(){
+scraf.tweetFeed = function(){
 	
 	var valueTop = -64; // Margin Top Value
 	
@@ -251,7 +251,7 @@ BRUSHED.tweetFeed = function(){
    Menu Highlight
 ================================================== */
 
-BRUSHED.menu = function(){
+scraf.menu = function(){
 	$('#menu-nav, #menu-nav-mobile').onePageNav({
 		currentClass: 'current',
     	changeHash: false,
@@ -267,7 +267,7 @@ BRUSHED.menu = function(){
    Next Section
 ================================================== */
 
-BRUSHED.goSection = function(){
+scraf.goSection = function(){
 	$('#nextsection').on('click', function(){
 		$target = $($(this).attr('href')).offset().top-30;
 		
@@ -280,7 +280,7 @@ BRUSHED.goSection = function(){
    GoUp
 ================================================== */
 
-BRUSHED.goUp = function(){
+scraf.goUp = function(){
 	$('#goUp').on('click', function(){
 		$target = $($(this).attr('href')).offset().top-30;
 		
@@ -294,7 +294,7 @@ BRUSHED.goUp = function(){
 	Scroll to Top
 ================================================== */
 
-BRUSHED.scrollToTop = function(){
+scraf.scrollToTop = function(){
 	var windowWidth = $(window).width(),
 		didScroll = false;
 
@@ -326,7 +326,7 @@ BRUSHED.scrollToTop = function(){
    Thumbs / Social Effects
 ================================================== */
 
-BRUSHED.utils = function(){
+scraf.utils = function(){
 	
 	$('.item-thumbs').bind('touchstart', function(){
 		$(".active").removeClass("active");
@@ -349,7 +349,7 @@ BRUSHED.utils = function(){
    Accordion
 ================================================== */
 
-BRUSHED.accordion = function(){
+scraf.accordion = function(){
 	var accordion_trigger = $('.accordion-heading.accordionize');
 	
 	accordion_trigger.delegate('.accordion-toggle','click', function(event){
@@ -371,7 +371,7 @@ BRUSHED.accordion = function(){
    Toggle
 ================================================== */
 
-BRUSHED.toggle = function(){
+scraf.toggle = function(){
 	var accordion_trigger_toggle = $('.accordion-heading.togglize');
 	
 	accordion_trigger_toggle.delegate('.accordion-toggle','click', function(event){
@@ -391,7 +391,7 @@ BRUSHED.toggle = function(){
    Tooltip
 ================================================== */
 
-BRUSHED.toolTip = function(){ 
+scraf.toolTip = function(){ 
     $('a[data-toggle=tooltip]').tooltip();
 }
 
@@ -400,7 +400,7 @@ BRUSHED.toolTip = function(){
 	Init
 ================================================== */
 
-BRUSHED.slider();
+scraf.slider();
 
 $(document).ready(function(){
 	Modernizr.load([
@@ -431,25 +431,25 @@ $(document).ready(function(){
 		}
 	});
 	
-	BRUSHED.nav();
-	BRUSHED.mobileNav();
-	BRUSHED.listenerMenu();
-	BRUSHED.menu();
-	BRUSHED.goSection();
-	BRUSHED.goUp();
-	BRUSHED.filter();
-	BRUSHED.fancyBox();
-	BRUSHED.contactForm();
-	BRUSHED.tweetFeed();
-	BRUSHED.scrollToTop();
-	BRUSHED.utils();
-	BRUSHED.accordion();
-	BRUSHED.toggle();
-	BRUSHED.toolTip();
+	scraf.nav();
+	scraf.mobileNav();
+	scraf.listenerMenu();
+	scraf.menu();
+	scraf.goSection();
+	scraf.goUp();
+	scraf.filter();
+	scraf.fancyBox();
+	scraf.contactForm();
+	scraf.tweetFeed();
+	scraf.scrollToTop();
+	scraf.utils();
+	scraf.accordion();
+	scraf.toggle();
+	scraf.toolTip();
 });
 
 $(window).resize(function(){
-	BRUSHED.mobileNav();
+	scraf.mobileNav();
 });
 
 });
