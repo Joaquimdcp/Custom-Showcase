@@ -535,9 +535,21 @@ nav#menu #menu-nav {
 nav#menu #menu-nav li {
 	list-style: none;
 	display: inline-block;
-	margin-left: 50px;	
+	margin-left: 20px;	
+}
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+	color: #fff;
+	background-color: #7F8289;
 }
 
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
+	color: #fff;
+}
 nav#menu #menu-nav li:first-child {
 	margin-left: 0;	
 }
