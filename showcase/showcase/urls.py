@@ -16,8 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib   import admin
 from engine.views     import index
+from django.conf.urls.static import static
+from django.conf      import settings
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index$', index)
-]
+] + static('/cache/', document_root=settings.CACHE_ROOT)

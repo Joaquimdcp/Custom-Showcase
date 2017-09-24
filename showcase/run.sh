@@ -4,6 +4,7 @@
 sleep 10
 
 # Create and run migrations when needed
+python3 manage.py makemigrations thumbnail
 python3 manage.py makemigrations api
 python3 manage.py migrate
 
